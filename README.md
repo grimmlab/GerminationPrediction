@@ -26,9 +26,9 @@ or: Docker
           - ann/
 3. download finetune checkpoint from tensorflow model zoo
 
-3. Generate training/validation/testing Record files to train the model (gen_record_by_petridish.py)
+3. Generate training/validation/testing Record files to train the model (gen_records.py)
     - change Paths according to folder structure
-    - run gen_record_by_petridish.py
+    - run gen_records.py
     - output consists of:
         - summary textfile with class ratios
         - training/validation/testing record files
@@ -77,9 +77,3 @@ GIF: Predictions on one Germination Experiment
 - maybe remove Ground Truth as SAE not dependent on it. Add Title
 ![Germination Tracking](gifs/SAE.gif)
 
-
-
-
-## Update 18.06.2020
-- storing postprocess here
-- storing image generation here
