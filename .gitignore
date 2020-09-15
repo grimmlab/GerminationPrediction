@@ -4,7 +4,8 @@ data/
 /.vscode
 /tools
 /configs
-
+/pretrained_models
+/workspace
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
