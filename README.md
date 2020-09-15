@@ -54,7 +54,7 @@ docker run -it --gpus all -p 0.0.0.0:6006:6006 -v PATH/TO/PROJECT/FOLDER:/home/G
 4. Execute Training Script inside Docker Shell (indicated by tensorflow>)
 ```bash
 cd /home/GerminationPrediction
-python scripts/train_model.py -m “NEWMODELNAME” -c PATH/TO/CONFIG/FILE.config
+python scripts/train_model.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config
 ```   
 - -m: Name of the new model that will be trained
 - -c: Configuration File for Training
@@ -63,7 +63,7 @@ python scripts/train_model.py -m “NEWMODELNAME” -c PATH/TO/CONFIG/FILE.confi
 1. Execute Training Script inside Docker Shell (indicated by tensorflow>)
 ```bash
 cd /home/GerminationPrediction
-python scripts/predict_testset.py -m “NEWMODELNAME” -c PATH/TO/CONFIG/FILE.config
+python scripts/predict_testset.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config
 ```   
 - -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -c: Configuration File for Testing
@@ -75,7 +75,7 @@ Tensorflow saves checkpoints of the Training process in `/home/GerminationPredic
 1. Export the Inference Graph from a Checkpoint
 ```bash
 cd /home/GerminationPrediction
-python scripts/export_inference_graph.py -m “NEWMODELNAME” -c PATH/TO/CONFIG/FILE.config -p checkpoint
+python scripts/export_inference_graph.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config -p checkpoint
 ```   
 - -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -c: Configuration File
@@ -88,7 +88,7 @@ python scripts/predict_image.py
 
 3. Run Inference on a new Germination Experiment
 ```bash
-python scripts/predict_record.py -m “NEWMODELNAME” -i PATH/TOPETRIDISH/FILE.record
+python scripts/predict_record.py -m NEWMODELNAME -i PATH/TOPETRIDISH/FILE.record
 ```   
 - -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -i: `.record` file with all captures of a Germination Experiment (single petri dish)  
