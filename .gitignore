@@ -1,5 +1,13 @@
 # Project based
-data/
+data/PennisetumGlaucum
+data/PennisetumGlaucum2
+data/ZeaMays
+data/ZeaMays2
+data/SecaleCereale
+data/SecaleCereale2
+
+
+
 .vscode/
 /.vscode
 /tools
