@@ -1,19 +1,18 @@
 # Project based
-data/PennisetumGlaucum
-data/PennisetumGlaucum2
-data/ZeaMays
-data/ZeaMays2
-data/SecaleCereale
-data/SecaleCereale2
+/data/PennisetumGlaucum
+/data/PennisetumGlaucum2
+/data/ZeaMays
+/data/ZeaMays2
+/data/SecaleCereale
+/data/SecaleCereale2
 
 
-
+/pretrained_models/faster_rcnn_inception_resnet_v2
+/pretrained_models/faster_rcnn_inception_resnet_v2_2
 .vscode/
 /.vscode
 /tools
-/configs
-/pretrained_models
-/workspace
+/workspace/*
 
 readme_bk.md
 # Byte-compiled / optimized / DLL files
@@ -145,10 +144,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# FOLDERS IN REPO THAT ARE TOO LARGE
-data/
-notes/
-PG/
-SC/
-ZM/
