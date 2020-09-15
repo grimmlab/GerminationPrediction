@@ -31,6 +31,7 @@ git clone https://github.com/Nischkl/GerminationPrediction
 1. Download and Extract additional Data to PATH/TO/PROJECT/FOLDER/data
 
 2. Download pretrained Models (on COCO dataset) for specific Architectures from [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md) and extract them to PATH/TO/PROJECT/FOLDER/pretrained_models
+
 Following models were used in this project:
 - faster_rcnn_inception_v2_coco
 - faster_rcnn_resnet50_coco
@@ -42,9 +43,13 @@ Following models were used in this project:
 docker run -it --gpus all -p 0.0.0.0:6006:6006 -v PATH/TO/PROJECT/FOLDER:/home/GerminationPrediction od
 ```   
 -it: Interactive Docker Shell 
+
 --gpus: lets Docker use GPUS 
+
 -p: opens port 6006 which is used by tensorboard to visualize the training/validation process
+
 -v: binds the project folder to be used by Docker. 
+
 od: name of the pulled Docker Image
 
 
