@@ -4,10 +4,18 @@
 [![Python 3.6](https://img.shields.io/badge/Python-3.6-3776AB)](https://www.python.org/downloads/release/python-360/)
 
 ## Description   
+We present a machine learning–based method, using modern convolutional neural networks with region proposals, for an automated and high-throughput assessment of seed germination experiments for various species.
+The purpose of this study is to reduce the time-consuming and labor-intensive human visual inspections of seed germination experiments and to develop an improved germination prediction method that is (1) independent of custom color-based thresholds and thus can be applied to multiple seed cultivars and illumination settings and (2) can be used to better explore the dynamics of seed germination. 
 
-## Example Germination (Test Set)
+## Example Predictions on a Germination Experiment
 
 ![Example Germination](gifs/germination.gif)
+
+Colors:
+- lime: Non-germinated Prediction
+- darkgreen: Non-germinated Ground Truth
+- pink: Germinated Prediction
+- purple: Germinated Ground Truth
 
 
 ## Requirements
@@ -56,7 +64,7 @@ docker run -it --gpus all -p 0.0.0.0:6006:6006 -v PATH/TO/PROJECT/FOLDER:/home/G
 cd /home/GerminationPrediction
 python scripts/train_model.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config
 ```   
-- -m: Name of the new model that will be trained
+- -m: Name of the new model that will be trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -c: Configuration File for Training
 
 ## Test Models Accuracy on a Hold-Out Test Set
@@ -71,7 +79,7 @@ python scripts/predict_testset.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config
 2. optional: Change the Checkpoint that is used for Testing
 Tensorflow saves checkpoints of the Training process in `/home/GerminationPrediction/workspace/NEWMODELNAME/ckpt/`. Change the variable `model_checkpoint_path` in the file called `checkpoint` to the checkpoint that needs to be tested.
 
-## Run Inference on the trained Model
+## Run Inference on the Trained Model
 1. Export the Inference Graph from a Checkpoint
 ```bash
 cd /home/GerminationPrediction
