@@ -9,10 +9,15 @@
 
 /pretrained_models/faster_rcnn_inception_resnet_v2
 /pretrained_models/faster_rcnn_inception_resnet_v2_2
+
+
+/workspace/INCRES_PG_4
+/workspace/INCRES_SC_5
+/workspace/INCRES_ZM_5
+
 .vscode/
 /.vscode
 /tools
-/workspace/*
 
 readme_bk.md
 # Byte-compiled / optimized / DLL files
