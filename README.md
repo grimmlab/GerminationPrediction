@@ -30,7 +30,7 @@ git clone https://github.com/Nischkl/GerminationPrediction
 ## Train new Models
 1. Download and Extract additional Data to PATH/TO/PROJECT/FOLDER/data
 
-2. Download pretrained Models (on COCO dataset) for specific Architectures from [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md) and extract them to PATH/TO/PROJECT/FOLDER/pretrained_models
+2. Download pretrained Models (on COCO dataset) for specific Architectures from [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md) and extract them to `PATH/TO/PROJECT/FOLDER/pretrained_models`
 
 Following models were used in this project:
 - faster_rcnn_inception_v2_coco
@@ -43,10 +43,29 @@ Following models were used in this project:
 docker run -it --gpus all -p 0.0.0.0:6006:6006 -v PATH/TO/PROJECT/FOLDER:/home/GerminationPrediction od
 ```   
 - -it: Interactive Docker Shell 
-- --gpus: lets Docker use GPUS 
+- --gpus: lets Docker use GPUs
 - -p: opens port 6006 which is used by tensorboard to visualize the training/validation process
 - -v: binds the project folder to be used by Docker. 
 - od: name of the pulled Docker Image
+
+4. Execute Training Script inside Docker Shell (indicated by tensorflow>)
+```bash
+cd /home/GerminationPrediction
+python scripts/train_model.py -m “NEWMODELNAME” -c PATH/TO/CONFIG/FILE.config
+```   
+- -m: Name of the new model that will be trained
+- -c: Configuration File for Training
+
+## Test Models Accuracy on a Hold-Out Test Set
+1. Execute Training Script inside Docker Shell (indicated by tensorflow>)
+```bash
+cd /home/GerminationPrediction
+python scripts/predict_testset.py -m “NEWMODELNAME” -c PATH/TO/CONFIG/FILE.config
+```   
+- -m: Name of the new model that has been trained
+- -c: Configuration File for Testing
+
+2. optional: Change the Checkpoint that is used for Testing
 
 
 
