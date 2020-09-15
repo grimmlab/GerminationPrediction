@@ -9,6 +9,19 @@ We present a machine learning–based method, using modern convolutional neural 
 The purpose of this study is to reduce the time-consuming and labor-intensive human visual inspections of seed germination experiments and to develop an improved germination prediction method that is (1) independent of custom color-based thresholds and thus can be applied to multiple seed cultivars and illumination settings and (2) can be used to better explore the dynamics of seed germination. 
 </p>
  
+
+
+<p align="center">
+  <b>Some Links:</b><br>
+  <a href="#">Link 1</a> |
+  <a href="#">Link 2</a> |
+  <a href="#">Link 3</a>
+  <br><br>
+  <img src="http://s.4cdn.org/image/title/105.gif">
+</p>
+
+
+
 ## Example Predictions on a Germination Experiment
 <div align="center"> 
 ![Example Germination](gifs/germination.gif)
