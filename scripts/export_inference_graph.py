@@ -18,12 +18,12 @@ def main(argv):
     config_path = None
     checkpoint = None
     try:
-        opts, _ = getopt.getopt(argv, "hb:m:c:p:", ["model_name=", "config_path=", "checkpoint="])
+        opts, _ = getopt.getopt(argv, "hm:c:p:", ["model_name=", "config_path=", "checkpoint="])
     except getopt.GetoptError:
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print('train_model.py -m <model_name> -c <config_path> -p <checkpoint> ')
+            print('train_model.py -m <model_name> -c <config_path> -p <checkpoint>')
             sys.exit()
         elif opt in ("-m", "--model_name"):
             model_name = arg

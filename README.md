@@ -5,6 +5,9 @@
 
 ## Description   
 
+## Example Germination (Test Set)
+
+![Example Germination](gifs/germination.gif)
 
 
 ## Requirements
@@ -28,7 +31,7 @@ git clone https://github.com/Nischkl/GerminationPrediction
 
 
 ## Train new Models
-1. Download and Extract additional Data to PATH/TO/PROJECT/FOLDER/data
+1. Download and Extract additional Data to `PATH/TO/PROJECT/FOLDER/data`
 
 2. Download pretrained Models (on COCO dataset) for specific Architectures from [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md) and extract them to `PATH/TO/PROJECT/FOLDER/pretrained_models`
 
@@ -62,78 +65,35 @@ python scripts/train_model.py -m “NEWMODELNAME” -c PATH/TO/CONFIG/FILE.confi
 cd /home/GerminationPrediction
 python scripts/predict_testset.py -m “NEWMODELNAME” -c PATH/TO/CONFIG/FILE.config
 ```   
-- -m: Name of the new model that has been trained
+- -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -c: Configuration File for Testing
 
 2. optional: Change the Checkpoint that is used for Testing
+Tensorflow saves checkpoints of the Training process in `/home/GerminationPrediction/workspace/NEWMODELNAME/ckpt/`. Change the variable `model_checkpoint_path` in the file called `checkpoint` to the checkpoint that needs to be tested.
+
+## Run Inference on the trained Model
+1. Export the Inference Graph from a Checkpoint
+```bash
+cd /home/GerminationPrediction
+python scripts/export_inference_graph.py -m “NEWMODELNAME” -c PATH/TO/CONFIG/FILE.config -p checkpoint
+```   
+- -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
+- -c: Configuration File
+- -p: Checkpoint Integer (`/home/GerminationPrediction/workspace/NEWMODELNAME/ckpt/model.ckpt-XXXX`)
+
+2. Run Inference on Images
+```bash
+python scripts/predict_image.py
+```   
+
+3. Run Inference on a new Germination Experiment
+```bash
+python scripts/predict_record.py -m “NEWMODELNAME” -i PATH/TOPETRIDISH/FILE.record
+```   
+- -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
+- -i: `.record` file with all captures of a Germination Experiment (single petri dish)  
 
 
 
-or: Docker
-### Usage
-1. Download data from 
-2. Extract to data/ 
-    - Structure:
-        data/
-        - ZeaMays/
-          - img/
-          - ann/
-        - PennisetumGlaucum/
-          - img/
-          - ann/
-        - SecaleCereale/
-          - img/
-          - ann/
-3. download finetune checkpoint from tensorflow model zoo
 
-3. Generate training/validation/testing Record files to train the model (gen_records.py)
-    - change Paths according to folder structure
-    - run gen_records.py
-    - output consists of:
-        - summary textfile with class ratios
-        - training/validation/testing record files
-        - testing record files for each petri dish in /PD folder
-4. Generate hyperparameters for validating the models (gen_hyperpar.py)
-5. Modify Configuration (/config) and label map
-
-6. Train Model (python3 train_model.py -b <base_path> -m "<model_name>" -c <path_to_config_file>) base_path= folder where /data is located
-7. Check models performance with tensorboard (tensorboard --logdir= path_to_models_folder)
-8. Export inference Graph of best performing model (export_inference_graph.py -b <base_path> -m "<model_name>" -c <path_to_config_file> -p <checkpoint_postfix>)
-9. Make Predictions on test set ()
-    - in models/<model_name>/ckpt/checkpoint: change model_checkpoint_path to the checkpoint that is used for testing
-    - run predict_testset.py -p <path_to_ckpt_folder> -c <path_to_testing_config_file>
-10. Predict Germination status on a petri dish
-    - predict_record.py -b <base_path> -m "<model_name>" -i <input_petridish_record>
-    - outputs in models/<model_name>/predictions/
-
-11. Post-processing step: gen_GermCurve.py
-    - creates GermCurves folder in <base_path>
-    - format of csv-file:  <max_seeds>, <germ_seeds (cumulated)>
-
-12. use R package: germinationmetrics   
-
-12. vis_GermCurve.py: plots Figure 5 of paper
-13. vis_GermMetrics.ipynb: plots Figure 6 of paper
-
-
-
-## Util Scripts
-- gen_hyperpar.py: used to uniformly sample hyperparameters that are used in this study
-- extract_img_from_tfrecord.py: can be used on files that are generated with "generate_tfrecords.py" to debug it
-
-
-## Custom Models
-
-
-## Example Germination (Test Set)
-
-![Example Germination](gifs/germination.gif)
-
-GIF: Predictions on one Germination Experiment
-## Post-Processing
-- shows the germination curve of one seed
-- Seed #8 in upper GIF (ng: not germinated, g: germinated)
-- The goal is to get a germination curve for each seed, where the seed is only germinating once. 
-- maybe remove Ground Truth as SAE not dependent on it. Add Title
-![Germination Tracking](gifs/SAE.gif)
 
