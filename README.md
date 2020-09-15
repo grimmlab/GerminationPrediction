@@ -1,13 +1,34 @@
 # Accurate Machine Learning Based Germination Detection, Prediction and Quality Assessment of Various Seed Cultivars
+[![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
 [![TensorFlow 1.15](https://img.shields.io/badge/TensorFlow-1.15-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v1.15.0)
 [![Python 3.6](https://img.shields.io/badge/Python-3.6-3776AB)](https://www.python.org/downloads/release/python-360/)
-## Getting Started
 
-### Requirements
+## Description   
+
+
+
+## Requirements
 - Python 3.x
-- Tensorflow Object Detection API
 - CUdnn
 - CUDA
+
+## Installation via Docker
+
+1. Download tensorflow-object-detection Image
+```bash
+docker pull deeone/tensorflow-object-detection
+```   
+
+2. Clone this Project
+```bash
+git clone https://github.com/Nischkl/GerminationPrediction
+```   
+
+3. Download and Extract additional Data to PATH/TO/DOWNLOADED/FOLDER/data
+
+## Train new Models
+
+1. Download pretrained Models for specific Architectures from [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md)
 
 
 or: Docker
