@@ -11,6 +11,7 @@
 - Python 3.x
 - CUdnn
 - CUDA
+- nvidia-docker2
 
 ## Installation via Docker
 
@@ -24,11 +25,28 @@ docker pull deeone/tensorflow-object-detection
 git clone https://github.com/Nischkl/GerminationPrediction
 ```   
 
-3. Download and Extract additional Data to PATH/TO/DOWNLOADED/FOLDER/data
+
 
 ## Train new Models
+1. Download and Extract additional Data to PATH/TO/PROJECT/FOLDER/data
 
-1. Download pretrained Models for specific Architectures from [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md)
+2. Download pretrained Models (on COCO dataset) for specific Architectures from [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md) and extract them to PATH/TO/PROJECT/FOLDER/pretrained_models
+Following models were used in this project:
+- faster_rcnn_inception_v2_coco
+- faster_rcnn_resnet50_coco
+- faster_rcnn_resnet101_coco
+- faster_rcnn_inception_resnet_v2_atrous_coco
+
+3. Run Docker Image with GPU Support
+```bash
+docker run -it --gpus all -p 0.0.0.0:6006:6006 -v PATH/TO/PROJECT/FOLDER:/home/GerminationPrediction od
+```   
+-it: Interactive Docker Shell 
+--gpus: lets Docker use GPUS 
+-p: opens port 6006 which is used by tensorboard to visualize the training/validation process
+-v: binds the project folder to be used by Docker. 
+od: name of the pulled Docker Image
+
 
 
 or: Docker
