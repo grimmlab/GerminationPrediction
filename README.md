@@ -1,5 +1,6 @@
 
 <div align="center">    
+
 # Accurate Machine Learning Based Germination Detection, Prediction and Quality Assessment of Various Seed Cultivars
 
 [![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
@@ -11,21 +12,9 @@
 We present a machine learning–based method, using modern convolutional neural networks with region proposals, for an automated and high-throughput assessment of seed germination experiments for various species.
 The purpose of this study is to reduce the time-consuming and labor-intensive human visual inspections of seed germination experiments and to develop an improved germination prediction method that is (1) independent of custom color-based thresholds and thus can be applied to multiple seed cultivars and illumination settings and (2) can be used to better explore the dynamics of seed germination. 
 
-
-
-<p align="center">
-  <b>Some Links:</b><br>
-  <a href="#">Link 1</a> |
-  <a href="#">Link 2</a> |
-  <a href="#">Link 3</a>
-  <br><br>
-  <img src="http://s.4cdn.org/image/title/105.gif">
-</p>
-
-
-
 ## Example Predictions on a Germination Experiment
 <div align="center"> 
+
 ![Example Germination](gifs/germination.gif)
 
 Color-coding:
@@ -35,6 +24,7 @@ Color-coding:
 - purple: Germinated Ground Truth
 
 </div>
+
 ## Requirements
 - Python 3.x
 - CUdnn
