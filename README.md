@@ -81,7 +81,7 @@ python scripts/export_inference_graph.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.
 - -c: Configuration File
 - -p: Checkpoint Integer (`/home/GerminationPrediction/workspace/NEWMODELNAME/ckpt/model.ckpt-XXXX`)
 
-2. Run Inference on Images
+2. Run Inference on Images (change paths in `predict_image.py`)
 ```bash
 python scripts/predict_image.py
 ```   
