@@ -4,6 +4,7 @@ from glob import glob
 import numpy as np 
 import subprocess
 import getopt
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 def gen_folder_structure(model_name):
     P_MODEL_DIR = f"/home/GerminationPrediction/workspace/{model_name}/ckpt/"

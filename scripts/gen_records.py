@@ -12,13 +12,13 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 from object_detection.utils import dataset_util
 # OWN UTIL FUNCTIONS:
-import gp_utils.gen_record_util as GR
+import gp_utils.germ_pred_util as GR
 def main(_):
     ##### Change base_path according to folder structure #####
-    base_path = "/home/ngenze/GerminationPrediction/"
-    REC_NAME = "pg" #suffix for generated record files
-    species_name = "SecaleCereale" # PennisetumGlaucum (SEED = 4) / ZeaMays (SEED = 4) / SecaleCereale (SEED = 9)
-    SEED = 9
+    base_path = "/home/GerminationPrediction/"
+    REC_NAME = "zm" #suffix for generated record files
+    species_name = "ZeaMays" # PennisetumGlaucum (SEED = 4) / ZeaMays (SEED = 4) / SecaleCereale (SEED = 9)
+    SEED = 4
     #######################################################
 
     TRAIN_VAL_RATIO = 0.9
