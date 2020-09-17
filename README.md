@@ -46,8 +46,33 @@ docker run -it od
 ```bash
 git clone https://github.com/grimmlab/GerminationPrediction
 ```   
+3. Download Version 2 of the data from http://dx.doi.org/10.17632/4wkt6thgp6.1 
+The Data consists of 3 zipped folders:
+- GermPredDataset: Images (.jpg) and the corresponding Bounding Box Annotations (.xml) in PASCAL VOC format for Germination Experiments of 824 Zea mays, 811 Secale cereale and 814 Pennisetum glaucum seeds. This data can be used to train new models from scratch.
+- GermPredRecords: In order to reproduce the results from this paper, we provide the dataset split into training, validation and hol-out test set. Aditionally, labelmaps and configuration files for the Tensorflow Object Detection API are also available.
+- GermPredModels: The training checkpoint files for the model architecture and hyperparameters with the highest mean Average Precision (mAP) on the validation set and their corresponding inference graph is also published for everyone without the need of re-training the models.
 
+4. Extract and move the subfolders into the correspoding project folder 
+- GermPredRecords: move to `data/`
+- GermPredModels: move to `workspace/` 
 
+Overall, the project folder structure should look like this after importing the data:
+
+GerminationPrediction
+├── data
+│   ├── PennisetumGlaucum   # GermPredRecords
+│   ├── SecaleCereale       # GermPredRecords
+│   └── ZeaMays             # GermPredRecords
+│       ├── configs         # GermPredRecords
+│       ├── records         # GermPredRecords
+│       └── test_images     # GitHub Project
+├── gifs
+├── pretrained_models       # Tensorflow Model Zoo
+├── scripts
+└── workspace             
+    ├── PennisetumGlaucum   # GermPredModels
+    ├── SecaleCereale       # GermPredModels
+    └── ZeaMays             # GermPredModels
 
 ## Train new Models
 1. Download and Extract additional Data to `PATH/TO/PROJECT/FOLDER/data`
@@ -74,6 +99,8 @@ docker run -it --gpus all -p 0.0.0.0:6006:6006 -v PATH/TO/PROJECT/FOLDER:/home/G
 ```bash
 cd /home/GerminationPrediction
 python scripts/train_model.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config
+# Example:
+python scripts/train_model.py -m ZeaMays -c ./data/ZeaMays/configs/INCRES_ZM_5.config
 ```   
 - -m: Name of the new model that will be trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -c: Configuration File for Training
@@ -82,7 +109,9 @@ python scripts/train_model.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config
 1. Execute Training Script inside Docker Shell (indicated by tensorflow>)
 ```bash
 cd /home/GerminationPrediction
-python scripts/predict_testset.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config
+python scripts/predict_testset.py -m NEWMODELNAME -c PATH/TO/TEST/CONFIG/FILE.config
+# Example:
+python scripts/predict_testset.py -m ZeaMays -c ./data/ZeaMays/configs/INCRES_ZM_5_test.config
 ```   
 - -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -c: Configuration File for Testing
@@ -90,11 +119,14 @@ python scripts/predict_testset.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config
 2. optional: Change the Checkpoint that is used for Testing
 Tensorflow saves checkpoints of the Training process in `/home/GerminationPrediction/workspace/NEWMODELNAME/ckpt/`. Change the variable `model_checkpoint_path` in the file called `checkpoint` to the checkpoint that needs to be tested.
 
-## Run Inference on the Trained Model
-1. Export the Inference Graph from a Checkpoint
+## Run Inference on the Trained Models
+1. Export the Inference Graph from a Checkpoint (this step has already been done if )
 ```bash
 cd /home/GerminationPrediction
 python scripts/export_inference_graph.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config -p checkpoint
+# Example:
+python scripts/export_inference_graph.py -m ZeaMays -c ./data/ZeaMays/configs/INCRES_ZM_5.config -p 9000
+
 ```   
 - -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -c: Configuration File
@@ -108,6 +140,8 @@ python scripts/predict_image.py
 3. Run Inference on a new Germination Experiment
 ```bash
 python scripts/predict_record.py -m NEWMODELNAME -i PATH/TOPETRIDISH/FILE.record
+# Example:
+python scripts/predict_record.py -m ZeaMays -i ./data/ZeaMays/records/petridishes/PD_zm1_11.record
 ```   
 - -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -i: `.record` file with all captures of a Germination Experiment (single petri dish)  
