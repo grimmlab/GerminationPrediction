@@ -57,7 +57,7 @@ The Data consists of 3 zipped folders:
 - GermPredModels: move to `workspace/` 
 
 Overall, the project folder structure should look like this after importing the data:
-
+```
 GerminationPrediction
 ├── data
 │   ├── PennisetumGlaucum   # GermPredRecords
@@ -73,7 +73,7 @@ GerminationPrediction
     ├── PennisetumGlaucum   # GermPredModels
     ├── SecaleCereale       # GermPredModels
     └── ZeaMays             # GermPredModels
-
+```
 ## Train new Models
 1. Download and Extract additional Data to `PATH/TO/PROJECT/FOLDER/data`
 
