@@ -127,7 +127,7 @@ When using this workflow, please cite our publication:
 
 **Accurate Machine Learning–Based Germination Detection, Prediction and Quality Assessment of Different Seed Cultivars**  
 
-N Genze, R Bharti, M Grieb, SJ Schultheiss, DG Grimm
+N Genze, R Bharti, M Grieb, SJ Schultheiss, DG Grimm  
 Currently under Preparation
 
 
