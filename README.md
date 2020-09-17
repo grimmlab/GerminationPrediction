@@ -120,7 +120,7 @@ python scripts/predict_testset.py -m ZeaMays -c ./data/ZeaMays/configs/INCRES_ZM
 Tensorflow saves checkpoints of the Training process in `/home/GerminationPrediction/workspace/NEWMODELNAME/ckpt/`. Change the variable `model_checkpoint_path` in the file called `checkpoint` to the checkpoint that needs to be tested.
 
 ## Run Inference on the Trained Models
-1. Export the Inference Graph from a Checkpoint (this step has already been done if )
+1. Export the Inference Graph from a Checkpoint (this step has already been done if GermPredModels is downloaded)
 ```bash
 cd /home/GerminationPrediction
 python scripts/export_inference_graph.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.config -p checkpoint
