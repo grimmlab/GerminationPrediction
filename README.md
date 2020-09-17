@@ -31,7 +31,7 @@ Color-coding:
 - Python 3.x
 - CUdnn
 - CUDA
-- nvidia-docker2
+- [nvidia-docker2] (https://github.com/NVIDIA/nvidia-docker) [Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
 
 ## Installation via Docker
 
@@ -110,19 +110,26 @@ python scripts/predict_record.py -m NEWMODELNAME -i PATH/TOPETRIDISH/FILE.record
 - -m: Name of the new model that has been trained, a new folder will be created in `/home/GerminationPrediction/workspace`
 - -i: `.record` file with all captures of a Germination Experiment (single petri dish)  
 
+# FAQ
 
+## Permission Denied Error
+This error occurs, because the user inside the docker image is called "tensorflow" and has an uid and gid of 1000, which might not be equal to the user who downloaded the Repository or Data. To solve issues regarding Permission Denied Errors, make sure the user with the uid/gid 1000 has Read and Write permissions to all folders and files contained in the Repository and Data. This can be done by 
+```
+chmod -R 777 ./
+```   
 
-# __Contributors__ 
+# Contributors
 This best-practice pipeline is developed and maintened by members of the [Bioinformatics](www.bit.cs.tum.de) lab of [Prof. Dr. Dominik Grimm](https://bit.cs.tum.de/team/dominik-grimm/):
 
 * M.Sc. Nikita Genze
 
-# __Citation__
+# Citation
 When using this workflow, please cite our publication:
 
-**Accurate Machine Learning–Based Germination Detection, Prediction and Quality Assessment of Different Seed Cultivars
-**  
+**Accurate Machine Learning–Based Germination Detection, Prediction and Quality Assessment of Different Seed Cultivars**  
+
 Nikita Genze et al.
+
 Currently under Review
 
 
