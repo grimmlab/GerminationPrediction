@@ -112,7 +112,7 @@ python scripts/predict_record.py -m NEWMODELNAME -i PATH/TOPETRIDISH/FILE.record
 # FAQ
 
 ## Permission Denied Error
-This error occurs, because the user inside the docker image is called "tensorflow" and has an uid and gid of 1000, which might not be equal to the user who downloaded the Repository or Data. To solve issues regarding Permission Denied Errors, make sure the user with the uid/gid 1000 has Read and Write permissions to all folders and files contained in the Repository and Data. This can be done by 
+This error occurs, because the user inside the docker image is called "tensorflow" and has an uid and gid of 1000, which might not be equal to the user who downloaded the Repository or Data. To solve issues regarding Permission Denied Errors, make sure the user with the uid/gid 1000 has Read and Write permissions to all folders and files contained in the Repository and Data. From inside the folder of the GerminationPrediction project run the following command: 
 ```
 chmod -R 777 ./
 ```   
