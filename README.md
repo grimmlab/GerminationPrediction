@@ -36,7 +36,10 @@ Color-coding:
 
 1. Download tensorflow-object-detection Image
 ```bash
-docker pull deeone/tensorflow-object-detection
+git clone https://github.com/tensorflow/models.git
+# From the root of the git repository
+docker build -f research/object_detection/dockerfiles/tf1/Dockerfile -t od .
+docker run -it od
 ```   
 
 2. Clone this Project
@@ -97,7 +100,7 @@ python scripts/export_inference_graph.py -m NEWMODELNAME -c PATH/TO/CONFIG/FILE.
 - -c: Configuration File
 - -p: Checkpoint Integer (`/home/GerminationPrediction/workspace/NEWMODELNAME/ckpt/model.ckpt-XXXX`)
 
-2. Run Inference on Images (change paths in `predict_image.py`)
+2. Run Inference on Images (change paths accordingly in `predict_image.py`)
 ```bash
 python scripts/predict_image.py
 ```   
@@ -116,6 +119,10 @@ This error occurs, because the user inside the docker image is called "tensorflo
 ```
 chmod -R 777 ./
 ```   
+## Resource exhausted: OOM when allocating tensor with shape
+This error occurs, because the memory of the GPU is large not enough to hold the model and the data. The models were trained on a RTX2080 Ti with 12 GB of VRAM. If the available GPU has less VRAM available, change the `batch_size` parameter in the config file. 
+
+
 
 # Contributors
 This best-practice pipeline is developed and maintened by members of the [Bioinformatics](www.bit.cs.tum.de) lab of [Prof. Dr. Dominik Grimm](https://bit.cs.tum.de/team/dominik-grimm/):
