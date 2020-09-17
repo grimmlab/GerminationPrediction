@@ -4,7 +4,7 @@ from glob import glob
 import numpy as np 
 import subprocess
 import getopt
-
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 def test_model(P_MODEL_MAIN, model_name, P_CONFIG):
     print(f"Testing Model...")
     str_train = f"python {P_MODEL_MAIN} --checkpoint_dir=/home/GerminationPrediction/workspace/{model_name}/ckpt/ --pipeline_config_path={P_CONFIG} --run_once > ./workspace/{model_name}/test_results.txt"

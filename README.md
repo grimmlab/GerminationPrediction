@@ -2,10 +2,12 @@
 <div align="center">    
 
 # Accurate Machine Learning Based Germination Detection, Prediction and Quality Assessment of Various Seed Cultivars
-
+<!--
 [![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
+-->
 [![TensorFlow 1.15](https://img.shields.io/badge/TensorFlow-1.15-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v1.15.0)
 [![Python 3.6](https://img.shields.io/badge/Python-3.6-3776AB)](https://www.python.org/downloads/release/python-360/)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 </div>
 
 ## Description   
@@ -40,7 +42,7 @@ docker pull deeone/tensorflow-object-detection
 
 2. Clone this Project
 ```bash
-git clone https://github.com/Nischkl/GerminationPrediction
+git clone https://github.com/grimmlab/GerminationPrediction
 ```   
 
 
@@ -110,5 +112,17 @@ python scripts/predict_record.py -m NEWMODELNAME -i PATH/TOPETRIDISH/FILE.record
 
 
 
+# __Contributors__ 
+This best-practice pipeline is developed and maintened by members of the [Bioinformatics](www.bit.cs.tum.de) lab of [Prof. Dr. Dominik Grimm](https://bit.cs.tum.de/team/dominik-grimm/):
+
+* M.Sc. Nikita Genze
+
+# __Citation__
+When using this workflow, please cite our publication:
+
+**Accurate Machine Learning–Based Germination Detection, Prediction and Quality Assessment of Different Seed Cultivars
+**  
+Nikita Genze et al.
+Currently under Review
 
 
