@@ -28,9 +28,8 @@ Color-coding:
 </div>
 
 ## Requirements
-- Python 3.x
-- CUdnn
-- CUDA
+- Python 3.6
+- Compatible Graphics Card with CUDA >9 and cuDNN installed 
 - [nvidia-docker2](https://github.com/NVIDIA/nvidia-docker) [Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
 
 ## Installation via Docker
