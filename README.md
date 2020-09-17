@@ -31,7 +31,7 @@ Color-coding:
 - Python 3.x
 - CUdnn
 - CUDA
-- [nvidia-docker2] (https://github.com/NVIDIA/nvidia-docker) [Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
+- [nvidia-docker2](https://github.com/NVIDIA/nvidia-docker) [Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
 
 ## Installation via Docker
 
@@ -121,7 +121,7 @@ chmod -R 777 ./
 # Contributors
 This best-practice pipeline is developed and maintened by members of the [Bioinformatics](www.bit.cs.tum.de) lab of [Prof. Dr. Dominik Grimm](https://bit.cs.tum.de/team/dominik-grimm/):
 
-* M.Sc. Nikita Genze
+- M.Sc. Nikita Genze
 
 # Citation
 When using this workflow, please cite our publication:
