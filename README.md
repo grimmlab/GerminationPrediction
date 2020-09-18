@@ -46,7 +46,7 @@ docker run -it od
 ```bash
 git clone https://github.com/grimmlab/GerminationPrediction
 ```   
-3. Download Version 2 of the data from http://dx.doi.org/10.17632/4wkt6thgp6.1 
+3. Download Version 2 of the data from http://dx.doi.org/10.17632/4wkt6thgp6.2
 The Data consists of 3 zipped folders:
 - GermPredDataset: Images (.jpg) and the corresponding Bounding Box Annotations (.xml) in PASCAL VOC format for Germination Experiments of 824 Zea mays, 811 Secale cereale and 814 Pennisetum glaucum seeds. This data can be used to train new models from scratch.
 - GermPredRecords: In order to reproduce the results from this paper, we provide the dataset split into training, validation and hol-out test set. Aditionally, labelmaps and configuration files for the Tensorflow Object Detection API are also available.
