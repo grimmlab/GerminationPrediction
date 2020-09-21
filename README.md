@@ -19,13 +19,15 @@ The purpose of this study is to reduce the time-consuming and labor-intensive hu
 
 ![Example Germination](gifs/germination.gif)
 
+</div>
+
 Color-coding:
 - lime: Non-germinated Prediction
 - darkgreen: Non-germinated Ground Truth
 - pink: Germinated Prediction
 - purple: Germinated Ground Truth
 
-</div>
+
 
 ## Requirements
 - Python 3.6
