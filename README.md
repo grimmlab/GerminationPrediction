@@ -168,9 +168,9 @@ This best-practice pipeline is developed and maintened by members of the [Bioinf
 # Citation
 When using this workflow, please cite our publication:
 
-**Accurate Machine Learning–Based Germination Detection, Prediction and Quality Assessment of Different Seed Cultivars**  
+**Accurate Machine Learning–Based Germination Detection, Prediction and Quality Assessment of Three Grain Crops**  
 
 N Genze, R Bharti, M Grieb, SJ Schultheiss, DG Grimm  
-Currently under Preparation
+Plant Methods
 
 
