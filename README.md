@@ -1,7 +1,7 @@
 
 <div align="center">    
 
-# Accurate Machine Learning–Based Germination Detection, Prediction and Quality Assessment of Different Seed Cultivars
+# Accurate Machine Learning–Based Germination Detection, Prediction and Quality Assessment of Three Grain Crops
 <!--
 [![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
 -->
