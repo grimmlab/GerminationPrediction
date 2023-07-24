@@ -48,7 +48,7 @@ docker run -it od
 ```bash
 git clone https://github.com/grimmlab/GerminationPrediction
 ```   
-3. Download Version 2 of the data from http://dx.doi.org/10.17632/4wkt6thgp6.2
+3. Download Version 3 of the data from http://dx.doi.org/10.17632/4wkt6thgp6.3
 The Data consists of 3 zipped folders:
 - GermPredDataset: Images (.jpg) and the corresponding Bounding Box Annotations (.xml) in PASCAL VOC format for Germination Experiments of 824 Zea mays, 811 Secale cereale and 814 Pennisetum glaucum seeds. This data can be used to train new models from scratch.
 - GermPredRecords: In order to reproduce the results from this paper, we provide the dataset split into training, validation and hol-out test set. Aditionally, labelmaps and configuration files for the Tensorflow Object Detection API are also available.
@@ -173,4 +173,18 @@ When using this workflow, please cite our publication:
 N Genze, R Bharti, M Grieb, SJ Schultheiss, DG Grimm  
 Plant Methods
 
+@article{genze_accurate_2020,
+	title = {Accurate machine learning-based germination detection, prediction and quality assessment of three grain crops},
+	volume = {16},
+	issn = {1746-4811},
+	url = {https://doi.org/10.1186/s13007-020-00699-x},
+	doi = {10.1186/s13007-020-00699-x},
+	abstract = {Assessment of seed germination is an essential task for seed researchers to measure the quality and performance of seeds. Usually, seed assessments are done manually, which is a cumbersome, time consuming and error-prone process. Classical image analyses methods are not well suited for large-scale germination experiments, because they often rely on manual adjustments of color-based thresholds. We here propose a machine learning approach using modern artificial neural networks with region proposals for accurate seed germination detection and high-throughput seed germination experiments.},
+	number = {1},
+	journal = {Plant Methods},
+	author = {Genze, Nikita and Bharti, Richa and Grieb, Michael and Schultheiss, Sebastian J. and Grimm, Dominik G.},
+	month = dec,
+	year = {2020},
+	pages = {157},
+} 
 
